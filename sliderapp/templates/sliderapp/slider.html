@@ -1,0 +1,30 @@
+{% load static %}
+<div class="slider" id="slider_{{ slider.pk }}">
+    <div class="slider-inner">
+        {% for slide in slider.slides %}
+        <div class="slide{% if forloop.first %} active{% endif %}"  style="background-color: {{ slide.bg }};">
+            <div class="slide-image">
+                <img src="{% get_media_prefix %}{{ slide.image }}">
+            </div>
+            <div class="slide-caption">
+                {{ slide.caption }}
+            </div>
+            {% if slide.button.text %}
+            <a href="{{ slide.button.link }}" class="slide-cta-button">{{ slide.button.text }}</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="slider-buttons">
+        <button class="prev-button" type="button" data-target="slider_{{ slider.pk }}" title="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+        <button class="next-button" type="button" data-target="slider_{{ slider.pk }}" title="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+.empty-message {
+    text-align: center;
+    margin-top: 50px;
+}
+.slider {
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 75px;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    padding: 24px;
+}
+.slide.active {
+    display: block;
+}
+
+.slide-image {
+    margin-bottom: 1.5rem;
+}
+.slide-image img {
+    max-width: 100%;
+}
+.slide-caption {
+    margin-bottom: 1.5rem;
+}
+.slide-cta-button {
+    color: #000;
+    background-color: #faff69;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #000;
+    border-bottom-width: 3px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.slide-cta-button:hover {
+    background-color: #d7ff67;    
+}
+
+.slider-buttons button {
+    color: #444;
+    background-color: #f6f6f6;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid #ddd;
+    border-bottom-width: 3px;
+    border-radius: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+.slider-buttons button:hover {
+    color: #000;
+    background-color: #f2f2f2;
+    border-color: #000;
+}
+.slider-buttons button svg {
+    pointer-events: none;
+}
+.prev-button {
+    left: -1.5rem;
+    top: 40%;
+}
+.next-button {
+    right: -1.5rem;
+    top: 40%;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sliderapp demo</title>
+    <style type="text/css">{% include 'sliderapp/style.css' %}</style>
+</head>
+<body>
+<div class="container">
+    {% for slider in sliders %}
+        {% include 'sliderapp/slider.html' with slider=slider %}
+    {% empty %}
+        <div class="empty-message">
+            <h1>There no sliders yet.</h1>
+            <h2>Go to <a href="{% url 'admin:sliderapp_slider_add' %}">slider add page</a> to 
+            create a slider.</h2>
+        </div>
+    {% endfor %}
+</div>
+</body>
+<script type="text/javascript">{% include 'sliderapp/script.js' %}</script>
+</html>
