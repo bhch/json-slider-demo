@@ -8,7 +8,7 @@ function setUpSliders() {
     for (var i = 0; i < prevBtns.length; i++)
         prevBtns[i].addEventListener('click', function(e) {slide(e, 'prev')});
     
-    for (var i = 0; i < prevBtns.length; i++)
+    for (var i = 0; i < nextBtns.length; i++)
         nextBtns[i].addEventListener('click', function(e) {slide(e, 'next')});
 };
 

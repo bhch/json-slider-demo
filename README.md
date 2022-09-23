@@ -56,6 +56,12 @@ urlpatterns = [
 ]
 ```
 
+**5. Apply migrations**
+
+```sh
+python manage.py migrate
+```
+
 ## Usage
 
  1. Go to the admin page and [create a slider][create-slider].
