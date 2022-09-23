@@ -5,12 +5,19 @@ from sliderapp.models import Slider, SliderImage
 
 
 def demo(request):
+    """View for demo page."""
+
     sliders = Slider.objects.all()
     return render(request, 'sliderapp/demo.html', {'sliders': sliders})
 
 
 @login_required
 def slider_image_handler(request):
+    """View for handling AJAX file uploads in admin.
+    
+    See: https://django-jsonform.rtfd.io/en/latest/guide/upload.html#handling-file-uploads
+    """
+
     if request.method == 'POST':
         image = request.FILES['file']
         img = SliderImage.objects.create(image=image)
